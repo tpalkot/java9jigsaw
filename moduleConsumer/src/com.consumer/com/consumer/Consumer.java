@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 import java.util.ServiceLoader;
 
 import com.service.MyService;
+import com.service.SecretService;
 
 public class Consumer {
 
@@ -22,7 +23,7 @@ public class Consumer {
         ServiceLoader<MyService> myServiceLoader = ServiceLoader.load(MyService.class);
         MyService myService = myServiceLoader.iterator().next();
         myService.printMessage();
-        //com.implementer.MySeviceImplementer implementer = (com.implementer.MySeviceImplementer)myService;
+        com.service.SecretService.getService().message();
     }
 
     
